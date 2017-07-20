@@ -31,24 +31,14 @@ public class PerfectNumbersTest {
 
     @Test
     public void findPerfectNumberInGivenRangeTest() {
-        int startingNumber = 33550300;
-        int endingNumber = 33550400;
+
+        PerfectNumbers.startingNumber = 1;
+        PerfectNumbers.endingNumber = 30;
         ArrayList<Integer> expected = new ArrayList<>();
-        expected.add(33550336);
+        expected.add(6);
+        expected.add(28);
 
-        ArrayList<Integer> actual = new ArrayList<>();
-
-        if(startingNumber % 2 != 0) {
-            startingNumber = startingNumber + 1;
-        }
-
-        for (int i = startingNumber; i <= endingNumber; i+=2) {
-            if (i % 10 == 6 || i % 10 == 8) {
-                if (PerfectNumbers.isPerfectNumber(i)) {
-                    actual.add(i);
-                }
-            }
-        }
+        ArrayList<Integer> actual = PerfectNumbers.validatePerfectNumber(PerfectNumbers.startingNumber, PerfectNumbers.endingNumber);
         Assert.assertEquals(actual,expected);
     }
 }
