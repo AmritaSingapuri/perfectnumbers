@@ -32,11 +32,10 @@ public class PerfectNumbersTest {
     @Test
     public void findPerfectNumberInGivenRangeTest() {
 
-        PerfectNumbers.startingNumber = 1;
-        PerfectNumbers.endingNumber = 30;
+        PerfectNumbers.startingNumber = 33550300;
+        PerfectNumbers.endingNumber = 33550400;
         ArrayList<Integer> expected = new ArrayList<>();
-        expected.add(6);
-        expected.add(28);
+        expected.add(33550336);
 
         ArrayList<Integer> actual = PerfectNumbers.validatePerfectNumber(PerfectNumbers.startingNumber, PerfectNumbers.endingNumber);
         Assert.assertEquals(actual,expected);
